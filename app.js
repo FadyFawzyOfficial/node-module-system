@@ -14,3 +14,8 @@ console.log(global.message);
 //* So in Node, every file is a module, and all the variable & functions defined in that file
 //* are a scope to that module, they are not available outside of that module.
 console.log(module);
+
+// Use 'const' and not 'var' to prevent modifying the logger variable.
+const logger = require("./logger");
+
+logger.log("Message");
