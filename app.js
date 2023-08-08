@@ -9,3 +9,8 @@ sayHello("Fady");
 // And this is because of Node's modular system.
 var message = "";
 console.log(global.message);
+
+//! 'module' is not global object
+//* So in Node, every file is a module, and all the variable & functions defined in that file
+//* are a scope to that module, they are not available outside of that module.
+console.log(module);
