@@ -16,6 +16,6 @@ console.log(global.message);
 console.log(module);
 
 // Use 'const' and not 'var' to prevent modifying the logger variable.
-const logger = require("./logger");
+const log = require("./logger");
 
-logger.log("Message");
+log("Message");
