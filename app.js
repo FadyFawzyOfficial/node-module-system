@@ -19,3 +19,10 @@ console.log(module);
 const log = require("./logger");
 
 log("Message");
+
+// Path Module
+const path = require("path");
+
+const pathObject = path.parse(__filename);
+
+console.log(pathObject);
