@@ -26,3 +26,14 @@ const path = require("path");
 const pathObject = path.parse(__filename);
 
 console.log(pathObject);
+
+const os = require("os");
+
+const totalMemory = os.totalmem();
+const freeMemory = os.freemem();
+
+console.log("Total Memory: " + totalMemory);
+
+// Template String
+console.log(`Total Memory: ${totalMemory}`);
+console.log(`Free Memory: ${freeMemory}`);
