@@ -46,3 +46,14 @@ console.log(files);
 fs.readdir("./", (error, files) =>
   error ? console.log("Error:", error) : console.log("Result:", files)
 );
+
+const EventEmitter = require("events");
+const emitter = new EventEmitter();
+
+// Register a Listener
+emitter.on("messageLogged", function () {
+  console.log("Listener Called");
+});
+
+// Raise an Event
+emitter.emit("messageLogged");
