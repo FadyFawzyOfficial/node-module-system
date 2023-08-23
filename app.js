@@ -37,3 +37,12 @@ console.log("Total Memory: " + totalMemory);
 // Template String
 console.log(`Total Memory: ${totalMemory}`);
 console.log(`Free Memory: ${freeMemory}`);
+
+const fs = require("fs");
+
+const files = fs.readdirSync("./");
+console.log(files);
+
+fs.readdir("./", (error, files) =>
+  error ? console.log("Error:", error) : console.log("Result:", files)
+);
