@@ -15,11 +15,6 @@ console.log(global.message);
 //* are a scope to that module, they are not available outside of that module.
 console.log(module);
 
-// Use 'const' and not 'var' to prevent modifying the logger variable.
-const log = require("./logger");
-
-log("Message");
-
 // Path Module
 const path = require("path");
 
@@ -47,17 +42,13 @@ fs.readdir("./", (error, files) =>
   error ? console.log("Error:", error) : console.log("Result:", files)
 );
 
-const EventEmitter = require("events");
-const emitter = new EventEmitter();
+// Use 'const' and not 'var' to prevent modifying the logger variable.
+const Logger = require("./logger");
+const logger = new Logger();
 
 // Register a Listener
-emitter.on("messageLogged", (arguments) => {
+logger.on("messageLogged", (arguments) => {
   console.log("Listener Called", arguments);
 });
 
-// Raise an Event
-emitter.emit("messageLogged", { id: 1, url: "http://" });
-
-// Raise: logging (data: message)
-emitter.on("logging", (arguments) => console.log(arguments.data));
-emitter.emit("logging", { data: "message" });
+logger.log("message");
